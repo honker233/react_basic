@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+//项目的根组件
 
+// App -> index.js -> public/index.html (root)
 function App() {
+  //基础写法
+  // const handleClick=()=>{
+  //   console.log('button被点击了'); 
+  // }
+
+  //事件参数e
+  //  const handleClick=(e)=>{
+  //   console.log('button被点击了',e); 
+  // }
+
+  //传递自定义参数
+  //  const handleClick=(name)=>{
+  //   console.log('button被点击了',name); 
+  // }
+
+  //既要传递自定义参数，还要传递事件对象e
+   const handleClick=(name,e)=>{
+    console.log('button被点击了',name,e); 
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <button onClick={(e)=>handleClick('jack',e)}>click me</button>
     </div>
   );
 }
